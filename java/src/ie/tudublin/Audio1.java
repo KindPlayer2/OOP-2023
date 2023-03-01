@@ -47,7 +47,7 @@ public class Audio1 extends PApplet
         // ab = ai.mix; 
 
         // And comment the next two lines out
-        ap = minim.loadFile("heroplanet.mp3", 1024);
+        ap = minim.loadFile("travellers.mp3", 1024);
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
@@ -79,7 +79,8 @@ public class Audio1 extends PApplet
         float cx = width / 2;
         float cy = height / 2;
 
-        switch (mode) {
+        switch (mode) 
+        {
 			case 0:
                 background(0);
                 for(int i = 0 ; i < ab.size() ; i ++)
@@ -91,27 +92,21 @@ public class Audio1 extends PApplet
                     line(i, halfH + f, i, halfH - f);                    
                 }
                 break;
-        case 1:
-            background(0);            
-            break;
-
+            case 1:
+            {
+                background(0);            
+                break;
+            }
+            case 2:
+            {
+                stroke(255);
+                for(int i = 0; i < ab.size(); i++)
+                {
+                    line(i, halfH , i, halfH + ab.get(i) * halfH);
+                    circle(250, 100, ab.get(i) * halfH);
+                }
+                break;
+            }
         }
-        
-
-
-        
-        // Other examples we made in the class
-        /*
-        stroke(255);
-        fill(100, 255, 255);        
-        
-        circle(width / 2, halfH, lerpedA * 100);
-
-        circle(100, y, 50);
-        y += random(-10, 10);
-        smoothedY = lerp(smoothedY, y, 0.1f);        
-        circle(200, smoothedY, 50);
-        */
-
     }        
 }
