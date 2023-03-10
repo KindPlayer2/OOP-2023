@@ -19,7 +19,7 @@ public class Audio2 extends PApplet{
 
     public void settings()
     {
-        size(1024, 1024);
+        size(512, 512);
     }
 
     public void setup()
@@ -35,6 +35,7 @@ public class Audio2 extends PApplet{
     float[] lerpedBuffer;
     public void draw()
     {
+        
         background(0);
         colorMode(HSB);
         stroke(255);
@@ -71,7 +72,7 @@ public class Audio2 extends PApplet{
         circle(200, y, 50);
         circle(300, lerpedY, 50);
         
-
+        
 
 
         //println(map(5, 2, 10, 1000, 2000));
